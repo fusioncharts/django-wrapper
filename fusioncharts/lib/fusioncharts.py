@@ -26,7 +26,6 @@ class FusionCharts:
       FusionCharts.constructorOptions['height'] = height
       FusionCharts.constructorOptions['renderAt'] = renderAt
       FusionCharts.constructorOptions['dataFormat'] = dataFormat
-      #dataSource = unicode(dataSource, errors='replace')
       FusionCharts.constructorOptions['dataSource'] = dataSource
    
    # render the chart created
@@ -44,4 +43,6 @@ class FusionCharts:
       self.readyJson = self.readyJson.replace('}"', "}")
       
     return self.readyJson
- 
+   
+   def setChartParameter(self, param_key, param_value):
+    FusionCharts.constructorOptions[param_key] = param_value
