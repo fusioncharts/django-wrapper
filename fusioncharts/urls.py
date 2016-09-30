@@ -21,6 +21,8 @@ from web import simple, a_3d_pie_chart, a_column_line_area_combi_chart, loading_
 from web import fetching_data_from_json_url, fetching_data_from_xml_url
 from web import client_side_chart_export, render_angular_and_gauge, render_pyramid_and_funnel_charts
 from web import mul_col2d_using_dict
+from web import column2d_database
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -49,5 +51,6 @@ urlpatterns = [
     url(r'^web/client_side_chart_export/', client_side_chart_export.fc_export, name='fc_export'),
     url(r'^web/render_angular_and_gauge/', render_angular_and_gauge.fc_charts, name='fc_charts'),
     url(r'^web/render_pyramid_and_funnel_charts/', render_pyramid_and_funnel_charts.fc_charts, name='fc_charts'),
-    url(r'^web/mul-col2d-using-dict/', mul_col2d_using_dict.fc_charts, name='fc_charts')
+    url(r'^web/mul-col2d-using-dict/', mul_col2d_using_dict.fc_charts, name='fc_charts'),
+    url(r'^web/colm-db/', column2d_database.fc_db, name='fc_charts')
 ]
