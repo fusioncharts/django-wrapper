@@ -1,43 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FusionCharts || www.fusioncharts.com</title>
-	<style type="text/css">
-	a{
-		text-decoration: none;
-		color: rgba(34,25,59,.9);
-	}
-	a:hover {
-    text-decoration: underline;
-    color: black;
-}
-	</style>
+	<title>FC-python wrapper</title>
+	{% load static %} 
+   <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+   <script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fint.js" %}"></script>
 </head>
 <body>
-<h2><a href="">FusionCharts</a></h2>
-<h4>samples are</h4>
-<ol>
-	<li><a href="/static-json-example">static-json-example</a></li>
-  <li><a href="/static-xml-example">static-xml-example</a></li>
-  <li><a href="/dict-json-example">dict-json-example</a></li>
-  <li><a href="/dict-xml-example">dict-xml-example</a></li>
-  <li><a href="/database-example">database-example</a></li>
-  <li><a href="/database-drilldown-example">database-drilldown-example</a></li>
-  <li><a href="/annotation-example">annotation-example</a></li>
-  <li><a href="/map-example">map-example</a></li>
-  <li><a href="/gantt-chart-example">gantt-chart-example</a></li>
-  <li><a href="/angular-gauge-example">angular-gauge-example</a></li>
-  <li><a href="/linked-chart-single-level-example">linked-chart-single-level-example</a></li>
-  <li><a href="/single-series-chart-example">single-series-chart-example</a></li>
-  <li><a href="/multi-series-chart-example">multi-series-chart-example</a></li>
-  <li><a href="/xy-chart-example">xy-chart-example</a></li>
-  <li><a href="web/a_3d_pie_chart/">3d-pie-example</a></li>
-  <li><a href="web/a_column_line_area_combi_chart/">mscombi-example</a></li>
-  <li><a href="web/fetching_data_from_json_url/">fetching-data-from-jsonurl-example</a></li>
-  <li><a href="web/fetching_data_from_xml_url/">fetching-data-from-xmlurl-example</a></li>
-  <li><a href="web/client_side_chart_export/">client-side-chart-export-example</a></li>
-  <li><a href="web/render_angular_and_gauge/">rendering-angular-and-gaug-chart</a></li>
-  <li><a href="web/render_pyramid_and_funnel_charts/">rendering-pyramid-and-funnel-charts</a></li>
-</ol>
+	<div id="chart-1">{{ output|safe }}</div>
 </body>
 </html>
+
+

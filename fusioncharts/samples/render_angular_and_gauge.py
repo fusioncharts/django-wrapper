@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file which has required functions to embed the charts in html page
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 # Loading Data from a Static JSON String
 # It is a example to show a Pie 3D chart where data is passed as JSON string format.
-# The `fc_pie3dChart` method is defined to load chart data from an JSON string.
+# The `chart` method is defined to load chart data from an JSON string.
 
-def fc_charts(request):
+def chart(request):
     # Create an object for the Line chart using the FusionCharts class constructor
   angularChart = FusionCharts("angulargauge", "ex1", "100%", "200", "chart-1", "json",
         # The chart data is passed as a string to the `dataSource` parameter.
@@ -114,5 +114,5 @@ def fc_charts(request):
     }""")
   
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers. 
-  return  render(request, 'fusioncharts-html-template.html', {'output' : cylinderChart.render(),
-            'output_2' : angularChart.render()})
+  return  render(request, 'index.html', {'output' : angularChart.render(),
+            'output_2' : cylinderChart.render()})

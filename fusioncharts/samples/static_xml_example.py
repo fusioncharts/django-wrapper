@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 #Loading Data from a Static XML String
 # Example to create a Line chart with the chart data passed in XML string format.
-# The `fc_xml` method is defined to load chart data from an XML string.
+# The `chart` method is defined to load chart data from an XML string.
 
-def fc_xml(request):
+def chart(request):
     # Create an object for the Line chart using the FusionCharts class constructor
 	line = FusionCharts("line", "ex1" , "600", "400", "chart-1", "xml", 
         # The chart data is passed as a string to the `dataSource` parameter.
@@ -25,4 +25,4 @@ def fc_xml(request):
 	# Alternatively, you can assign this string to a string variable in a separate XML file and
 	# pass the URL of that file to the `dataSource` parameter.
 	
- 	return  render(request, 'fusioncharts-html-template.html', {'output' : line.render()})
+ 	return  render(request, 'index.html', {'output' : line.render()})

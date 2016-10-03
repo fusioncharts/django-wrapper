@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
-# The `fc_dict` function is defined to load data from a Python Dictionary. This data will be converted to
+# The `chart` function is defined to load data from a Python Dictionary. This data will be converted to
 # JSON and the chart will be rendered.
 
-def fc_dict_json(request):
+def chart(request):
 	# Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
 	dataSource = {}
 	dataSource['chart'] = { 
@@ -64,4 +64,4 @@ def fc_dict_json(request):
 
     # Create an object for the Pie 2D chart using the FusionCharts class constructor        	  		
 	pie2D = FusionCharts("pie2D", "ex1" , "600", "400", "chart-1", "json", dataSource)
-	return render(request, 'fusioncharts-html-template.html', {'output': pie2D.render()}) 
+	return render(request, 'index.html', {'output': pie2D.render()}) 

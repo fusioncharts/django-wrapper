@@ -2,17 +2,17 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 # Loading Data from a Static JSON String
 # Example to create a Column 2D chart with the chart data passed in JSON string format.
-# The `fc_json` method is defined to load chart data from a JSON string.
+# The `chart` method is defined to load chart data from a JSON string.
 
-def fc_drillDown(request):
+def chart(request):
     # Create an object for the Column 2D chart using the FusionCharts class constructor
 	column2DChart = FusionCharts("column2d", "ex1" , "600", "400", "chart-1", "json", 
 		# The chart data is passed as a string to the `dataSource` parameter.
-        """{
+    """{
       "chart": {
         "caption": "Projected Global IP Traffic, 2016-2019",
         "subcaption": "Click on a column to drill-down into type of traffic",
@@ -189,4 +189,4 @@ def fc_drillDown(request):
 	# Alternatively, you can assign this string to a string variable in a separate JSON file and
 	# pass the URL of that file to the `dataSource` parameter.
 	
- 	return  render(request, 'fusioncharts-html-template.html', {'output' : column2DChart.render()})
+ 	return  render(request, 'index.html', {'output' : column2DChart.render()})

@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
-# The `fc_charts` function is defined to load data from a Python Dictionary. This data will be converted to
+# The `chart` function is defined to load data from a Python Dictionary. This data will be converted to
 # JSON and the chart will be rendered in the browser.
 
-def fc_charts(request):
+def chart(request):
 	
 	dataSource = {}
     
@@ -57,6 +57,6 @@ def fc_charts(request):
 
     # Create an object for the Multiseries column 2D charts using the FusionCharts class constructor
 	mscol2D = FusionCharts("mscolumn2d", "ex1" , "600", "400", "chart-1", "json", dataSource)
-	return render(request, 'fusioncharts-html-template.html', {'output': mscol2D.render()}) 
+	return render(request, 'index.html', {'output': mscol2D.render()}) 
 
 

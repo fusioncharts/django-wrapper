@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 # Loading Data from a Static JSON String
 # Example to create a Multi-series-bar2d chart with the chart data passed as JSON string format.
-# The `fc_json` method is defined to load chart data from a JSON string.
+# The `chart` method is defined to load chart data from a JSON string.
 
-def fc_multiSeries(request):
+def chart(request):
   # Create an object for the Area 2D chart using the FusionCharts class constructor
 	msbarChart = FusionCharts("msbar2d", "ex1" , "550", "350", "chart-1", "json", 
 		# The chart data is passed as a string to the `dataSource` parameter.
@@ -78,4 +78,4 @@ def fc_multiSeries(request):
 	# Alternatively, you can assign this string to a string variable in a separate JSON file and
 	# pass the URL of that file to the `dataSource` parameter.
 	
- 	return  render(request, 'fusioncharts-html-template.html', {'output' : msbarChart.render()})
+ 	return  render(request, 'index.html', {'output' : msbarChart.render()})

@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 from ..models import *
 
-# The `fc_db` function is defined to load data from a `Country` Model. 
+# The `chart` function is defined to load data from a `Country` Model. 
 # This data will be converted to JSON and the chart will be rendered.
 
-def fc_drilldown(request):
+def chart(request):
 	# Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
 	dataSource = {}
 	dataSource['chart'] = { 
@@ -78,5 +78,5 @@ def fc_drilldown(request):
 
     # Create an object for the Column 2D chart using the FusionCharts class constructor        	  		
 	column2D = FusionCharts("column2D", "ex1" , "600", "400", "chart-1", "json", dataSource)
-	return render(request, 'fusioncharts-html-template.html', {'output': column2D.render()}) 
+	return render(request, 'index.html', {'output': column2D.render()}) 
 
