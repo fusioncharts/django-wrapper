@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
 # Loading Data from a Static JSON String
 # Example to create a Column 2D chart with the annotation and data are passed as JSON string format.
-# The `fc_annotation` method is defined to load chart data from a JSON string.
+# The `chart` method is defined to load chart data from a JSON string.
 
-def fc_annotation(request):
+def chart(request):
 	column2d = FusionCharts("column2d", "ex1" , "500", "300", "chart-1", "json", 
 		"""{
         "chart": {
@@ -86,5 +86,4 @@ def fc_annotation(request):
 
   # Alternatively, you can assign this string to a string variable in a separate JSON file and
   # pass the URL of that file to the `dataSource` parameter.
-
- 	return  render(request, 'fusioncharts-html-template.html', {'output' : column2d.render()})
+ 	return  render(request, 'index.html', {'output' : column2d.render()})

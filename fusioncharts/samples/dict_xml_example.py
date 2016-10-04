@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Include the `fusioncharts.py` file that contains functions to embed the charts.
-from ..lib.fusioncharts import FusionCharts
+from ..fusioncharts import FusionCharts
 
-# The `fc_xmldict` function is defined to load data from a Python Dictionary. This data will be converted to
+# The `chart` function is defined to load data from a Python Dictionary. This data will be converted to
 # XML and the chart will be rendered.
 
-def fc_dict_xml(request):
+def chart(request):
 	# Chart data is passed to the `dataSource` parameter, as xml
     chartXML = "<chart __attributes__>__set__</chart>"
     attributeTemplate = "__key__=\"__value__\" "
@@ -85,5 +85,5 @@ def fc_dict_xml(request):
 
     # Create an object for the bar chart using the FusionCharts class constructor        	  		
     bar2d = FusionCharts("bar2d", "ex1" , "600", "400", "chart-1", "xml", chartXML)
-    return render(request, 'fusioncharts-html-template.html', {'output': bar2d.render()})
+    return render(request, 'index.html', {'output': bar2d.render()})
  
