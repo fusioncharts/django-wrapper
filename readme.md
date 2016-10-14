@@ -12,32 +12,22 @@ Conventionally, FusionCharts Suite XT uses JavaScript and HTML to generate chart
 1.0
 
 ### Requirements
-Python 2.7 or higher
+Python 2.7 or higher  
+Note: Assuming you have already installed Django
 
 ### Installation
  * Include fusioncharts.py in your project.
  * Start rendering charts using the classes and methods under the "**FusionCharts**" namespace.
+ 
 ### Usage Guide
 
 #### Installing FusionCharts JS libraries in your page where you want to display FusionCharts
-There are two ways you can include the FusionCharts JS library in your project:
-* Using FusionCharts CDN
-* Using library files placed in the folder of your project
+Download the FusionCharts library using files placed in the folder of your project. You need to  download the **[`trial version`](http://www.fusioncharts.com/download/)** of FusionCharts.
 
-**Using FusionCharts CDN**
-
-To use FusionCharts CDN, you need to write a &lt;**script**&gt; tag in that particular section of the page where you want to include the source of the FusionCharts library link from the specific local folder in the project. The script tag will look as shown below:
-
+Assuming you have the FusionCharts library placed inside the "static/fusioncharts" folder in your project, write a script tag in the <head> section of the page where you want to add the source of the FusionCharts library link from the local folder.
 ```html
-<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
-```
-**Using library files placed in a folder of your project**
-
-You can download the **[`trial version`](http://www.fusioncharts.com/download/)** of FusionCharts.
-
-Next, assuming you have the FusionCharts library placed inside the "static/fusioncharts" folder in your project, write a script tag in the <head> section of the page where you want to add the source of the FusionCharts library link from the local folder.
-```html
-   <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+{% load static %} 
+<script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
 ```
 Now, you are ready to prepare the chart using our JSP-wrapper. 
 ### Using the wrapper
