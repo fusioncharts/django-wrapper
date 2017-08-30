@@ -29,7 +29,7 @@ Assuming you have the FusionCharts library placed inside the "static/fusionchart
 {% load static %} 
 <script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
 ```
-Now, you are ready to prepare the chart using our JSP-wrapper. 
+Now, you are ready to prepare the chart using our django-wrapper. 
 ### Using the wrapper
 
 #### 1. Creating a chart
