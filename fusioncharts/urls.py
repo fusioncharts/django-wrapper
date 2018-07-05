@@ -19,6 +19,7 @@ from samples import column2d_database, database_example, database_drilldown_exam
 from samples import a_3d_pie_chart, a_column_line_area_combi_chart
 from samples import fetching_data_from_json_url, fetching_data_from_xml_url, mul_col2d_using_dict
 from samples import client_side_chart_export, render_angular_and_gauge, render_pyramid_and_funnel_charts
+from samples import overlapped_column_chart, overlapped_bar_chart, common_theme_chart, combination_chart, vml_chart
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -46,5 +47,10 @@ urlpatterns = [
     url(r'^render-angular-and-gauge/', render_angular_and_gauge.chart, name='chart'),
     url(r'^render-pyramid-and-funnel-charts/', render_pyramid_and_funnel_charts.chart, name='chart'),
     url(r'^mul-col2d-using-dict/', mul_col2d_using_dict.chart, name='chart'),
-    url(r'^render-column-2d-using-database/', column2d_database.chart, name='chart')
+    url(r'^render-column-2d-using-database/', column2d_database.chart, name='chart'),
+    url(r'^overlapped-column-chart/', overlapped_column_chart.chart, name='chart'),
+    url(r'^overlapped-bar-chart/', overlapped_bar_chart.chart, name='chart'),
+    url(r'^common-theme-chart/', common_theme_chart.chart, name='chart'),
+    url(r'^combination-chart/', combination_chart.chart, name='chart'),
+    url(r'^vml-chart/', vml_chart.chart, name='chart')
 ]
