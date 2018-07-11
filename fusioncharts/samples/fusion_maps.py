@@ -95,7 +95,7 @@ def chart(request):
     ]
 
     # Create an object for the usa map using the FusionCharts class constructor
-    fusionMap = FusionCharts("usa", "ex1" , "650", "450", "chart-1", "json", datasource)
+    fusionMap = FusionCharts("maps/usa", "ex1" , "650", "450", "chart-1", "json", datasource)
 
     # Alternatively, you can assign this string to a string variable in a separate JSON file and
     # pass the URL of that file to the `dataSource` parameter.

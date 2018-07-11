@@ -18,7 +18,7 @@ def chart(request):
                 "caption":"Harry\'s SuperMart",
                 "subCaption":"Top 5 stores in last month by revenue",
                 "numberPrefix":"$",
-                "exportEnabled ":"1",
+                "exportEnabled":"1",
                 "theme":"ocean"
              },
              "data":
