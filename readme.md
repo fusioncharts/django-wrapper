@@ -16,7 +16,9 @@ Python 2.7 or higher
 Note: Assuming you have already installed Django
 
 ### Installation
- * Include fusioncharts.py in your project.
+ ** Download the **[fusioncharts-suite-xt](http://www.fusioncharts.com/)**
+ * Unzip the archive and move to "fusioncharts-suite-xt > integrations > django > fusioncharts-wrapper" to get the "fusioncharts.py" file.
+ * copy fusioncharts.py to the STATIC folder in your project's folder.
  * Start rendering charts using the classes and methods under the "**FusionCharts**" namespace.
  
 ### Usage Guide
