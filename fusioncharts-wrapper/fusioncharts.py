@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import json
 
+
 # Common base class for FC
 class FusionCharts:
 

@@ -12,6 +12,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from fusioncharts.views import catalogue
 
+from fusioncharts import datahandler
 from fusioncharts.samples import rendering_angular_gauge_using_dictionary_example, rendering_column2d_chart_using_dictionary_example
 from fusioncharts.samples import rendering_map_using_dictionary_example, rendering_multiseries_column2d_chart_using_json_example
 from fusioncharts.samples import rendering_multiseries_StackedColumn2dline_using_json_example, rendering_pie3d_using_json_example
@@ -20,7 +21,10 @@ from fusioncharts.samples import rendering_angular_gauge_using_json_example, cli
 from fusioncharts.samples import fetching_json_data_from_url, fetching_xml_data_from_url, fetching_data_from_database
 from fusioncharts.samples import drilldown_from_database_example, rendering_charts_by_common_theme
 from fusioncharts.samples import export_chart_using_export_handler
-from fusioncharts import datahandler
+from fusioncharts.samples import dynamic_chart_resize, dynamic_chart_type, chart_annotation, chart_update_onclick
+from fusioncharts.samples import chart_tooltip, rendering_chart_with_different_language, chart_special_chart
+from fusioncharts.samples import product_life_cycle_event
+
 
 urlpatterns = [
     url(r'^$', catalogue),
@@ -42,5 +46,12 @@ urlpatterns = [
     url(r'^drilldown-from-database-example', drilldown_from_database_example.chart, name='chart'),
     url(r'^rendering-charts-by-common-theme', rendering_charts_by_common_theme.chart, name='chart'),
     url(r'^export-chart-using-export-handler', export_chart_using_export_handler.chart, name='chart'),
-    
+    url(r'^dynamic-chart-resize', dynamic_chart_resize.chart, name='chart'),
+    url(r'^dynamic-chart-type', dynamic_chart_type.chart, name='chart'),
+    url(r'^chart-annotation', chart_annotation.chart, name='chart'),
+    url(r'^chart-update-onclick', chart_update_onclick.chart, name='chart'),
+    url(r'^rendering-chart-with-different-language', rendering_chart_with_different_language.chart, name='chart'),
+    url(r'^chart-special-chart', chart_special_chart.chart, name='chart'),
+    url(r'^chart-tooltip', chart_tooltip.chart, name='chart'),
+    url(r'^product-life-cycle-event', product_life_cycle_event.chart, name='chart')
 ]
