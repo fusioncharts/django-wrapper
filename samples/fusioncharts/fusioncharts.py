@@ -30,8 +30,8 @@ class FusionCharts:
         #dataSource = unicode(dataSource, errors='replace')
         self.constructorOptions['dataSource'] = dataSource
 
-    def addEvent(self, eventName, functionName):
-        self.eventOptions[eventName] = functionName
+    def addEvent(self, eventName, funcName):
+        self.eventOptions[eventName] = funcName
 
     def addMessage(self, messageName, messageValue):
         self.constructorOptions[messageName] = messageValue
@@ -48,11 +48,11 @@ class FusionCharts:
 
         # Iterate and attach EventHandler from template
         for key, value in self.eventOptions.items():
-            self.readyJson = self.readyJson + "\r\n" + FusionCharts.eventTemplate.replace('__chartId__', self.constructorOptions['id'])
+            self.readyJson = self.readyJson + FusionCharts.eventTemplate.replace('__chartId__', self.constructorOptions['id'])
             self.readyJson = self.readyJson.replace("_fceventname_", key).replace("_fceventbody_", value)
 
         # FusionCharts Render method will create chart
-        self.readyJson = self.readyJson + "\r\n" + FusionCharts.renderTemplate.replace('__chartId__', self.constructorOptions['id'])
+        self.readyJson = self.readyJson + FusionCharts.renderTemplate.replace('__chartId__', self.constructorOptions['id'])
         self.readyJson = FusionCharts.baseTemplate.replace("__FC__", self.readyJson)
 
         self.readyJson = self.readyJson.replace('\\n', '')

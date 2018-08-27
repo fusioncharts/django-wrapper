@@ -23,8 +23,10 @@ from fusioncharts.samples import drilldown_from_database_example, rendering_char
 from fusioncharts.samples import export_chart_using_export_handler
 from fusioncharts.samples import dynamic_chart_resize, dynamic_chart_type, chart_annotation, chart_update_onclick
 from fusioncharts.samples import chart_tooltip, rendering_chart_with_different_language, chart_special_chart
-from fusioncharts.samples import product_life_cycle_event
-
+from fusioncharts.samples import product_life_cycle_event, special_event, chart_message, interactive_event, number_format_module
+from fusioncharts.samples import special_chart_type_api, chart_instance_level_api, chart_product_level_api
+from fusioncharts.samples import updating_chart_properties, highlight_specific_data_points, update_data_runtime
+from fusioncharts.samples import get_data_from_scatter_chart
 
 urlpatterns = [
     url(r'^$', catalogue),
@@ -53,5 +55,18 @@ urlpatterns = [
     url(r'^rendering-chart-with-different-language', rendering_chart_with_different_language.chart, name='chart'),
     url(r'^chart-special-chart', chart_special_chart.chart, name='chart'),
     url(r'^chart-tooltip', chart_tooltip.chart, name='chart'),
-    url(r'^product-life-cycle-event', product_life_cycle_event.chart, name='chart')
+    url(r'^product-life-cycle-event', product_life_cycle_event.chart, name='chart'),
+    url(r'^special-event', special_event.chart, name='chart'),
+    url(r'^chart-message', chart_message.chart, name='chart'),
+    url(r'^interactive-event', interactive_event.chart, name='chart'),
+    url(r'^number-format-module', number_format_module.chart, name='chart'),
+    url(r'^special-chart-type-api', special_chart_type_api.chart, name='chart'),
+    url(r'^chart-instance-level-api', chart_instance_level_api.chart, name='chart'),
+    url(r'^chart-product-level-api', chart_product_level_api.chart, name='chart'),
+    url(r'^updating-chart-properties', updating_chart_properties.chart, name='chart'),
+    url(r'^highlight-specific-data-points', highlight_specific_data_points.chart, name='chart'),
+    url(r'^update-data-runtime', update_data_runtime.chart, name='chart'),
+    url(r'^get-data-from-scatter-chart', get_data_from_scatter_chart.chart, name='chart')
+    
+ 
 ]

@@ -123,6 +123,49 @@ The following parameters can be used in a constructor in the order they are desc
 |dataFormat | `String` | Type of the data that is given to the chart. e.g. `json`, `jsonurl`, `xml`, `xmlurl`|
 |dataSource | `String` | Actual data for the chart. e.g. `{"chart":{},"data":[{"label":"Jan","value":"420000"}]}`|
 
+
+### **Event parameters:**
+Following parameters can be used in an event in the order they are described.
+
+| Parameter | Type | Description |
+|:-------|:----------:| :------|
+|eventName | `String` | Which event you want to bind. e.g. `dataLoaded`.|
+|funcName | `String` | Javascript function, which is written in your client side code|
+
+More information: https://www.fusioncharts.com/dev/api/fusioncharts/fusioncharts-events
+
+```
+# Creating FC Chart object
+column2d = FusionCharts("column2d", "chart-1", '700', '400', "chart-container", "json", chartDataSource)
+
+# Attach 'dataplotClick' event
+column2d.addEvent("dataplotClick", "onDataplotClick");
+
+# Render the chart
+return  render(request, 'index.html', {'output' : column2d.render()})
+```
+
+### **Message parameters:**
+let you set and configure custom chart messages. Following parameters can be used in a message in the order they are described.
+
+| Parameter | Type | Description |
+|:-------|:----------:| :------|
+|messageName | `String` | Message you want to customize. e.g. loadMessage|
+|messageValue | `String` | Your custom message|
+
+More information: https://www.fusioncharts.com/dev/chart-attributes/
+
+```
+# Creating FC Chart object
+column2d = FusionCharts("column2d", "chart-1", '700', '400', "chart-container", "json", chartDataSource)
+
+# Attach message with message string.
+column2d.addMessage("loadMessage", "please wait data is being loaded");
+
+# Render the chart
+return  render(request, 'index.html', {'output' : column2d.render()})
+```
+
 ### License
 **FUSIONCHARTS:**
 
