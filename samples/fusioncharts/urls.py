@@ -27,6 +27,13 @@ from fusioncharts.samples import product_life_cycle_event, special_event, chart_
 from fusioncharts.samples import special_chart_type_api, chart_instance_level_api, chart_product_level_api
 from fusioncharts.samples import updating_chart_properties, highlight_specific_data_points, update_data_runtime
 from fusioncharts.samples import get_data_from_scatter_chart
+from fusioncharts.samples import Line_Chart_With_Time_Axis, Plotting_Multiple_Series_On_Time_Axis
+from fusioncharts.samples import Column_and_line_combination_on_time_axis, Plotting_Two_Variables
+from fusioncharts.samples import Different_Plot_Type_Chart, ColumnChart_With_Time_Axis
+from fusioncharts.samples import AreaChart_With_Time_Axis, Interactive_candlestick_chart
+from fusioncharts.samples import Annotating_single_data_point, Single_Event_Overlay
+from fusioncharts.samples import Date_range_event_overlay, Adding_Reference_Line
+
 
 urlpatterns = [
     url(r'^$', catalogue),
@@ -66,7 +73,17 @@ urlpatterns = [
     url(r'^updating-chart-properties', updating_chart_properties.chart, name='chart'),
     url(r'^highlight-specific-data-points', highlight_specific_data_points.chart, name='chart'),
     url(r'^update-data-runtime', update_data_runtime.chart, name='chart'),
-    url(r'^get-data-from-scatter-chart', get_data_from_scatter_chart.chart, name='chart')
-    
- 
+    url(r'^get-data-from-scatter-chart', get_data_from_scatter_chart.chart, name='chart'),
+    url(r'^Line-Chart-With-Time-Axis', Line_Chart_With_Time_Axis.chart, name='chart'),
+    url(r'^Plotting-Multiple-Series-On-Time-Axis', Plotting_Multiple_Series_On_Time_Axis.chart, name='chart'),
+    url(r'^Column-and-line-combination-on-time-axis', Column_and_line_combination_on_time_axis.chart, name='chart'),
+    url(r'^Plotting-Two-Variables', Plotting_Two_Variables.chart, name='chart'),
+    url(r'^Different-Plot-Type-Chart', Different_Plot_Type_Chart.chart, name='chart'),
+    url(r'^ColumnChart-With-Time-Axis', ColumnChart_With_Time_Axis.chart, name='chart'),
+    url(r'^AreaChart-With-Time-Axis', AreaChart_With_Time_Axis.chart, name='chart'),
+    url(r'^Interactive-candlestick-chart', Interactive_candlestick_chart.chart, name='chart'),
+    url(r'^Annotating-single-data-point', Annotating_single_data_point.chart, name='chart'),
+    url(r'^Single-Event-Overlay', Single_Event_Overlay.chart, name='chart'),
+    url(r'^Date-range-event-overlay', Date_range_event_overlay.chart, name='chart'),
+    url(r'^Adding-Reference-Line', Adding_Reference_Line.chart, name='chart') 
 ]
