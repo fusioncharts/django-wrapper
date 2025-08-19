@@ -377,7 +377,5 @@ let you set the following parameter in `AddAttribute` method.
 |value | `String` | Define json formatted value.|
 
 ### License
-**FUSIONCHARTS:**
 
-Copyright (c) FusionCharts, Inc.  
-License Information at [http://www.fusioncharts.com/license](http://www.fusioncharts.com/license)
+The FusionCharts Django integration component is open-source and distributed under the terms of the MIT/X11 License. However, you will need to download and include FusionCharts library in your page separately, which has a [separate license](https://www.fusioncharts.com/buy).
